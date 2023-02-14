@@ -1,0 +1,35 @@
+A try statement can have more than one except clause, to specify handlers for different exceptions.
+Please note that at most one handler will be executed. For example, we can add IndexError in the above code.
+The general syntax for adding specific exceptions are – 
+try:
+    # statement(s)
+except IndexError:
+    # statement(s)
+except ValueError:
+    # statement(s)
+    # Program to handle multiple errors with one
+# except statement
+# Python 3
+
+def fun(a):
+	if a < 4:
+
+		# throws ZeroDivisionError for a = 3
+		b = a/(a-3)
+
+	# throws NameError if a >= 4
+	print("Value of b = ", b)
+	
+try:
+	fun(3)
+	fun(5)
+
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+	print("ZeroDivisionError Occurred and Handled")
+except NameError:
+	print("NameError Occurred and Handled")
+Output
+ZeroDivisionError Occurred and Handled
+
